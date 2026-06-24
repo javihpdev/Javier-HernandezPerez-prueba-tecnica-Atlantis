@@ -1,0 +1,32 @@
+<div class="">
+    @if(label){<label class="font-small" [class.mb-3]="!description" for="id-{{control}}">{{label | translate}}</label>}
+    @if(description) {<div class="font-small mb-3 text-neutral-hover">{{description | translate}}</div>}
+    <div class="form-input" [class.gap-0]="prefix" [class.readOnly]="formControl.disabled" [class.error]="showControlError">
+        @if(icons?.left) {<span class="material-symbols-outlined">{{icons?.left}}</span>}
+        @if(prefix) {<span class="font-small prefix text-neutral-active" [class.fake]="readonly">{{prefix}}</span>}
+        <input (keyup)="toUppercase? onKeyup($event) : null" #input id="id-{{control}}" class="font-small border-0" [class.error]="showControlError"
+            [type]="type"
+            [inputMode]="inputMode"
+            placeholder={{placeholder}}
+            [formControl]="formControl"
+            [readonly]="formControl.disabled"
+            required={{required}}
+            [ngClass]="classList"
+            min={{min}}
+            max={{max}}
+            [value]="formControl"
+        >
+        @if(link) {
+            <a class="text-corporate-normal position-absolute right-{{icons?.right?'double':'single'}} font-caption" (click)="linkClick(linkText)" (keydown.enter)="linkClick(linkText)">{{linkText | translate}}</a>
+        }
+        @if(icons?.right) {<span class="position-absolute right-8 material-symbols-outlined text-neutral-hover">{{icons?.right}}</span>}
+    </div>
+    @if(showControlError){
+      <div class="font-footnote d-flex align-items-start text-error-normal gap-1 mt-2">
+        @if (errorText){
+          <span class="material-symbols-outlined font-footnote text-error-normal">cancel</span>
+          <span>{{errorText | translate}}</span>
+        }
+      </div>
+    }
+</div>

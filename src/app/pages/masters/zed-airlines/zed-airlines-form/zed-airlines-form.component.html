@@ -1,0 +1,38 @@
+@if (this.action != ActionEnum.FILTER){
+  <h2 mat-dialog-title>
+    @if (this.action == ActionEnum.EDIT){
+      {{'Editar aerolinea ZED' | translate}}
+    } @else {
+      {{'Nueva aerolinea ZED'  | translate}}
+    }
+  </h2>
+}
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <mat-dialog-content>
+    <div class="row">
+      <div class="col-12 col-md-6" [class.col-lg-3]="!data">
+        <div class="w-100" app-input [form]="form" [control]="'code'" [type]="'text'" [label]="'Código'"></div>
+      </div>
+      <div class="col-12 col-md-6"  [class.col-lg-3]="!data">
+        <div class="w-100" app-input [form]="form" [control]="'name'" [type]="'text'" [label]="'Nombre'"></div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="d-flex justify-content-end">
+    @if(data && data.modal){
+      <button type="button" class="btn btn-secondary me-2" mat-dialog-close>{{'Cerrar' | translate}}</button>
+    }
+    <button type="submit" class="btn btn-primary" cdkFocusInitial [disabled]="inProcess">
+      @if (inProcess){
+        <span class="spinner-border spinner-border-sm me-1" aria-hidden="true"></span>
+        <span role="status">{{'Cargando'}}...</span>
+      }@else if (this.action == ActionEnum.FILTER){
+        {{'Filtrar' | translate}}
+      } @else {
+        {{'Guardar' | translate}}
+      }
+    </button>
+  </mat-dialog-actions>
+
+</form>
+

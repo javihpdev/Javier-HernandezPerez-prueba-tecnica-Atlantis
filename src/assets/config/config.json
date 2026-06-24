@@ -1,0 +1,9 @@
+{
+  "api": {
+    "environmentConfig": {
+        "ENVIRONMENT": "local",
+        "API_URL": "http://localhost:8000",
+        "GRAPHQL_ENDPOINT": "/main/grapqhl"
+    }
+  }
+}

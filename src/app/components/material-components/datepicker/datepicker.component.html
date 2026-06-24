@@ -1,0 +1,10 @@
+<mat-form-field color="primary" appearance="outline">
+  <mat-label>{{label | translate}}</mat-label>
+  <input matInput [matDatepicker]="picker1" [formControl]="formControl">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+  @if (form.get(control)?.hasError('required')){
+    <mat-error class="invalid-feedback d-block">{{'Valor requerido' | translate}} </mat-error>
+  }
+</mat-form-field>

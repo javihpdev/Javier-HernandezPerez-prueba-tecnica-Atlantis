@@ -1,0 +1,252 @@
+:root{
+  --mat-dialog-container-small-max-width: 100vw;
+  --mat-dialog-content-padding: 16px
+}
+
+.modal-fare-conditions{
+  max-width: 100vw !important;
+  max-height: 90vh !important;
+  width: 444px;
+  .mat-mdc-dialog-content{
+    max-height: inherit;
+    padding: inherit;
+  }
+  @media (min-width: 768px) {
+    width: 45rem;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: inherit;
+    max-height: inherit;
+    border-radius: 0;
+  }
+}
+
+.privacy-policy-modal, .general-conditions-modal, .dangerous-goods-modal {
+  ol li {
+    margin-bottom: 1rem;
+  }
+}
+
+
+.fare-condition-modal, .condition-modal, .privacy-policy-modal, .general-conditions-modal, .dangerous-goods-modal {
+  max-width: 100vw !important;
+  max-height: 90vh;
+  width: 444px;
+  .mat-mdc-dialog-content{
+    max-height: 90vh;
+    padding: inherit;
+  }
+  @media (min-width: 768px) {
+    width: 45rem;
+    max-height: 90vh;
+  }
+}
+
+.amount-summary-modal{
+  height:95%;
+  max-width: 100vw !important;
+  max-height: 95%;
+  width: 444px;
+  .mat-mdc-dialog-content{
+    max-height: 95%;
+    padding: inherit;
+  }
+  @media (min-width: 768px) {
+    width: 45rem;
+    max-height: 95%;
+  }
+}
+
+.flight-info-modal{
+  max-width: 100vw !important;
+  height:100vh;
+  width: 387px;
+
+  .mat-mdc-dialog-surface.mdc-dialog__surface{
+    border-radius: 0;
+  }
+
+  @media (min-width: 768px) {
+    width: 40rem;
+    max-height: 80vh;
+    height: auto;
+    min-height: 50vh;
+
+    .mat-mdc-dialog-surface.mdc-dialog__surface{
+      border-radius: var(--spacer-3);
+    }
+  }
+}
+
+
+.fomento-modal{
+/*  max-width: 100vw !important;
+  max-height: 100vh !important;*/
+  width: 100%;
+  height: 100%;
+  .mat-mdc-dialog-content{
+    max-height: inherit;
+    padding: inherit;
+  }
+  @media (min-width: 768px) {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: inherit;
+    max-height: inherit;
+    border-radius: 0;
+  }
+
+}
+
+.extra-data-modal{
+  /*  max-width: 100vw !important;
+    max-height: 100vh !important;*/
+  width: 100%;
+  height: 100%;
+  .mat-mdc-dialog-content{
+    max-height: inherit;
+    padding: inherit;
+  }
+  @media (min-width: 768px) {
+    width: 444px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-width: inherit;
+    max-height: inherit;
+    border-radius: 0;
+  }
+
+}
+
+
+.session-ends-modal {
+    height: auto;
+    max-height: 100vh !important;
+    width: 756px;
+    margin: auto;
+
+  .mat-mdc-dialog-content{
+    max-height: inherit;
+    padding: inherit;
+  }
+
+  @media (max-width: 360px){
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.mat-mdc-dialog-surface{
+  border-radius: 8px;
+}
+
+.cdk-overlay-pane.ck-modal.mat-mdc-dialog-panel:has(.cookiesModalOpen){
+  height: auto;
+  max-height: none;
+}
+
+.ck-modal{
+  height: auto;
+//  max-height: 95vh;
+  .mat-mdc-dialog-content{
+    max-height: inherit;
+    padding: inherit;
+  }
+  @media (min-width: 768px) and (min-height: 768px){
+    width: 49vw;
+  }
+}
+
+.ck-modal:has(.cookiesModalClose){
+   width: 100vw;
+
+  @media (min-width: 768px){
+    width: 688px;
+  }
+
+  @media (min-width: 992px){
+    width: 688px;
+  }
+}
+
+.ck-modal:has(.cookiesModalOpen){
+  @media (min-width: 768px) and (min-height: 768px){
+    width: 50%;
+  }
+}
+
+.cdk-global-overlay-wrapper:has(.ck-modal){
+  align-items: end !important;
+  justify-content: end !important;
+  padding: 20px;
+}
+
+.cdk-global-overlay-wrapper:has(.ck-modal .cookiesModalOpen){
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+@media (max-width: 1140px) {
+  .ck-modal{
+    height:auto;
+  }
+
+  .cdk-overlay-pane.ck-modal.mat-mdc-dialog-panel:has(.cookiesModalOpen) {
+    height: 90vh !important;
+    max-height: 100vh;
+    margin:0;
+  }
+
+  .cdk-global-overlay-wrapper:has(.ck-modal){
+    padding:8px;
+  }
+
+  .cdk-global-overlay-wrapper:has(.ck-modal .cookiesModalOpen){
+    padding:0;
+  }
+
+  .mat-mdc-dialog-surface:has(.ck-modal .cookiesModalOpen),
+  .mat-mdc-dialog-surface:has(.cookiesModalOpen){
+    border-radius: 0;
+  }
+
+  .ck-modal:has(.cookiesModalOpen){
+    width:100% !important;
+    height:90%;
+    margin: 8px;
+    max-height:auto;
+  }
+}
+
+.mat-mdc-dialog-title {
+  margin: -32px 0 1px !important;
+  padding: 16px !important;
+
+  &.amount-summary-title{
+    margin: -43px 0 1px !important;
+  }
+
+  &.flight-info{
+    margin: -21px 0 1px !important;
+
+  }
+}
+
+.cdk-global-scrollblock {
+  position: inherit; /* Añadir esta línea para permitir el scroll global */
+  overflow: auto !important;
+}
+
+@media (max-width: 360px){
+  .cdk-global-overlay-wrapper:has(.session-ends-modal) {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .mat-mdc-dialog-surface{
+    border-radius: 0 !important;
+  }
+}

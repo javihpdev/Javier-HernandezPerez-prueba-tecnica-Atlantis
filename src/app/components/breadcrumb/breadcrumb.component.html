@@ -1,0 +1,22 @@
+<nav aria-label="breadcrumb">  
+  <ol class="breadcrumb">
+    @if(url.length > 0 && url[0] != '') {
+      <li class="breadcrumb-item">
+        <a class="text-corporate-accent text-decoration-underline fw-semibold " [routerLink]="['/' | localize]">
+          <span class="text-corporate-accent breadcrumb-item font-body fw-semibold">Inicio</span>
+        </a>
+      </li>
+      @for(val of url; track $index){
+        @if(!$last){
+          <li class="breadcrumb-item fw-semibold">
+            <a class="text-corporate-accent font-body text-decoration-underline" [routerLink]="getRouterLink(val)">{{val | breadcrumbText | translate}}</a>
+          </li>
+        }@else{
+          <li class="text-neutral-hover breadcrumb-item active font-body fw-semibold text-decoration-none d-flex align-items-end" aria-current="page">
+            <span class="text-neutral-hover breadcrumb-item active font-body fw-semibold text-decoration-none">{{(val ? val: 'Inicio') | breadcrumbText | translate}}</span>
+          </li>
+        }
+      }
+    }
+  </ol>
+</nav>

@@ -1,0 +1,46 @@
+<!-- Poner control de idiomas -->
+<div [ngClass]="classList" class="position-relative">
+    <label for="{{id}}"
+     [class.w-100]="fullLength" class="cursor-pointer">
+        <div class="form-checkbox"
+        [class.readOnly]="readonly && formControl.disabled"
+        [class.error]="errorMsg"
+        [class.py-3]="!description || descriptionInline"
+        [class.border-corporate-normal]="formControl.value"
+        [class.border-neutral-normal]="!formControl.value"
+        [class.border-none]="!border"
+        >
+            <span></span>
+            <div [class.justify-content-between] = "descriptionInline"
+                     class="d-flex" 
+                     [class.flex-column]="descriptionColumn"
+                     [class.align-items-center]="!descriptionColumn"
+                     >
+                <div class="font-small text-neutral-active border-0 cursor-pointer">
+                    @if(label){ {{label | translate}} }
+                    @if(labelHTML){<span [innerHTML]="labelHTML | translate"></span>}
+                  <ng-content select="[label]"></ng-content>
+                </div>
+                @if(description) {
+                    <div class="w-100 font-small text-neutral-hover cursor-pointer" 
+                        [class.mt-2]="!descriptionInline"
+                        [class.text-end]="descriptionInline">{{description | translate}}
+                    </div>
+                }
+                <input type="checkbox" class="me-3"
+                    id="{{id}}" [formControl]="formControl"
+                    [readonly]="readonly"
+                    [ngClass]="formFieldClassList"
+                    [value]="formControl.value"
+                >
+            </div>
+        </div>
+    <!-- Poner logica de control de errores -->
+    @if(errorMsg) {
+        <div class="font-caption d-flex align-items-center text-error-normal gap-1 mt-2">
+            <span class="material-symbols-outlined font-caption text-error-normal">cancel</span>
+            <span>{{errorMsg | translate}}</span>
+        </div>
+    }
+    </label>
+</div>

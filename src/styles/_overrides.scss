@@ -1,0 +1,32 @@
+// Sobrescritura de estilos por defecto (como Angular Material)
+.cdk-overlay-pane.mat-mdc-dialog-panel {
+  max-width: 100vw !important;
+}
+
+.btn:focus-visible{
+  box-shadow: none !important;  
+}
+
+input:focus-visible,
+input:focus,
+input:focus-within,
+input:active,
+textarea:focus-visible,
+textarea:focus,
+textarea:focus-within,
+textarea:active,
+select:focus-visible,
+select:focus,
+select:focus-within,
+select:active {
+  outline: none;
+}
+
+input, select, textarea {
+  background-color:var(--bs-neutral-light);
+}
+
+.text-decoration-underline {
+  text-decoration: underline !important;
+  text-underline-offset: 4px !important;
+}

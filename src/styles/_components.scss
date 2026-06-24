@@ -1,0 +1,31 @@
+// Componentes globales (botones, layouts, etc.)
+.btn{
+  gap: var(--spacer-3);
+  border-radius: 60px;
+  outline:none !important;
+}
+
+.btn[class*="btn-outline-"]:hover {
+  border-color: var(--bs-neutral-normal);
+  background-color: var(--bs-neutral-light);
+}
+
+.btn-link {
+  --bs-btn-color: var(--bs-corporate-normal);
+  font-size: var(--fs-base);
+}
+
+.main-layout{
+  background-color: var(--bs-neutral-light);
+  border: 1px solid var(--bs-neutral-light-active);
+  overflow: hidden;
+  margin: auto;
+}
+
+.secondary-layout{
+  background-color: var(--bs-neutral-light);
+  border: 1px solid var(--bs-neutral-light-active);
+  overflow: hidden;
+  max-width: 444px;
+  margin: auto;
+}

@@ -1,0 +1,72 @@
+  button {
+    border:none;
+    outline: none;
+    border-radius: 8px;
+  }
+
+  .normal {height: 48px;}
+  .small {height: 44px;}
+  .disabled {
+    border: 0;
+    outline: 0;
+    background-color: var(--bs-neutral-light-active) !important;
+    color: var(--bs-neutral-normal) !important;
+  }
+
+  .a-disabled {
+    background-color: transparent;
+    border:none;
+    color: var(--bs-second-level) !important;
+    opacity: 1;
+  }
+
+  .outline-disabled {
+    background-color: transparent;
+    border-color: var(--bs-second-level);
+    color: var(--bs-second-level) !important;
+    opacity: 1;
+  }
+
+  .btn-disabled.btn-normal:disabled {
+    border: 1px solid var(--bs-neutral-800) !important;
+    background-color: var(--bs-neutral-800) !important;
+    color: var(--bs-neutral-100) !important;
+  }
+
+  .btn-disabled.btn-as:disabled {
+    border: 1px solid var(--bs-neutral-800) !important;
+    background-color: var(--bs-neutral-800) !important;
+    color: var(--bs-neutral-100) !important;
+    opacity: 1;
+  }
+
+  .no-under-sep {
+    text-decoration: none;
+  }
+
+  .no-under-sep::after {
+    content: "·";
+    margin-left: var(--spacer-3);
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .spin-icon {
+    animation: spin 2s linear infinite;
+  }
+
+  .icon-card-selected{
+    height:20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+  }

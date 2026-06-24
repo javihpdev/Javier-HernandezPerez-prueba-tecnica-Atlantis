@@ -1,0 +1,28 @@
+<!--
+<mat-expansion-panel class="my-3" #expansionPanel >
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{ title | translate}}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <ng-content select="[body]"></ng-content>
+
+</mat-expansion-panel>
+-->
+<div class="accordion my-3" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        {{ title | translate}}
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ng-content select="[body]"></ng-content>
+      </div>
+    </div>
+  </div>
+
+
+</div>

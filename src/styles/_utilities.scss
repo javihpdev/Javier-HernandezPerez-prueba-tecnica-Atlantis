@@ -1,0 +1,208 @@
+// Clases utilitarias personalizadas
+@each $color-name, $color-value in $theme-colors {
+  $alfa: alpha($color-value);
+  @if($alfa != 1) {
+    .bg-#{$color-name} {background-color: $color-value !important;}
+    .text-#{$color-name} {color: $color-value !important;}
+    .border-#{$color-name} {border-color: $color-value !important;}
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .border#{$infix}-top {      border-top: $border-width solid $border-color !important; }
+    .border#{$infix}-right {    border-right: $border-width solid $border-color !important; }
+    .border#{$infix}-bottom {   border-bottom: $border-width solid $border-color !important; }
+    .border#{$infix}-left {     border-left: $border-width solid $border-color !important; }
+
+    .border#{$infix}-top-0 {    border-top: 0 !important; }
+    .border#{$infix}-right-0 {  border-right: 0 !important; }
+    .border#{$infix}-bottom-0 { border-bottom: 0 !important; }
+    .border#{$infix}-left-0 {   border-left: 0 !important; }
+
+    .border#{$infix}-1 {    
+      border-top: 1px solid $border-color !important;
+      border-right: 1px solid $border-color !important; 
+      border-bottom: 1px solid $border-color !important; 
+      border-left: 1px solid $border-color !important; 
+    }
+
+    .border#{$infix}-x {
+      border-left: $border-width solid $border-color !important;
+      border-right: $border-width solid $border-color !important;
+    }
+
+    .border#{$infix}-y {
+      border-top: $border-width solid $border-color !important;
+      border-bottom: $border-width solid $border-color !important;
+    }
+  }
+}
+
+//---------------------------------------------------------------
+// Positions
+//---------------------------------------------------------------
+
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @each $spacer-name, $spacer-value in $spacers {
+    // Para xs, no usamos media query
+    @if $breakpoint == xs {
+      @if($spacer-name != 0) {
+        .top-#{$spacer-name} {
+          top: $spacer-value !important;
+        }
+      }
+    } @else {
+      @media (min-width: $breakpoint-value) {
+        .top-#{$breakpoint}-#{$spacer-name} {
+          top: $spacer-value !important;
+        }
+      }
+    }
+  }
+}
+
+// @media (min-width: 577px) {
+//     .top-md-69 {
+//         top: 69px !important;
+//     }
+// }
+
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @media (min-width: $breakpoint-value) {
+    .d-#{$breakpoint}-contents {
+      display: contents !important;
+    }
+  }
+}
+
+.d-flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-flex-end{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.d-flex-between{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//---------------------------------------------------------------
+// Utilities según breakpoints originales de Bootstrap
+//---------------------------------------------------------------
+
+$original-bs-breakpoints: (576, 768, 992, 1200, 1400);
+
+$order-values: (-1, 0, 1, 2, 3, 4, 5);
+
+$grid-columns: 12;
+
+$align-items-values: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch
+);
+
+$justify-content-values: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly
+);
+
+$align-self-values: (
+  auto: auto,
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch
+);
+
+$display-values: (
+  none: none,
+  block: block
+);
+
+//---------------------------------------------------------------
+// Mixins
+//---------------------------------------------------------------
+
+@mixin flex-direction-utils($bp) {
+  .flex-#{$bp}-row { flex-direction: row !important; }
+  .flex-#{$bp}-column { flex-direction: column !important; }
+}
+
+@mixin order-utils($bp, $orders) {
+  @each $o in $orders {
+    .order-#{$bp}-#{$o} { order: $o !important; }
+  }
+}
+
+@mixin align-items-utils($bp, $values) {
+  @each $name, $value in $values {
+    .align-#{$bp}-#{$name} { align-items: $value !important; }
+  }
+}
+
+@mixin justify-content-utils($bp, $values) {
+  @each $name, $value in $values {
+    .justify-#{$bp}-#{$name} { justify-content: $value !important; }
+  }
+}
+
+@mixin align-self-utils($bp, $values) {
+  @each $name, $value in $values {
+    .align-self-#{$bp}-#{$name} { align-self: $value !important; }
+  }
+}
+
+@mixin display-utils($bp, $values) {
+  @each $name, $value in $values {
+    .d-#{$bp}-#{$name} {
+      display: $value !important;
+    }
+  }
+}
+
+@mixin grid-col-utils($bp, $cols) {
+  @for $i from 1 through $cols {
+    .g-col-#{$bp}-#{$i} {
+      grid-column: span #{$i} !important;
+    }
+  }
+}
+
+
+//---------------------------------------------------------------
+// Include
+//---------------------------------------------------------------
+
+@each $bp in $original-bs-breakpoints {
+  @media (min-width: #{$bp}px) {
+    @include display-utils($bp, $display-values);
+    @include flex-direction-utils($bp);
+    @include order-utils($bp, $order-values);
+    @include align-items-utils($bp, $align-items-values);
+    @include justify-content-utils($bp, $justify-content-values);
+    @include align-self-utils($bp, $align-self-values);
+    @include grid-col-utils($bp, $grid-columns);
+  }
+}
+
+
+

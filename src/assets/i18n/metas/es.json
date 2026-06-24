@@ -1,0 +1,20 @@
+{
+  "metas": {
+    "home": {
+      "title": "Angular base - Inicio",
+      "description": "Inicio"
+    },
+    "acceso": {
+      "title": "Angular base - Acceso",
+      "description": "Acceso"
+    },
+    "maestros/aeropuertos": {
+      "title": "Angular base - Maestro de aeropuertos",
+      "description": "Maestro de aeropuertos"
+    },
+    "maestros/aerolineas-zed": {
+      "title": "Angular base - Maestro de aerolíneas ZED",
+      "description": "Maestro de aerolíneas ZED"
+    }
+  }
+}

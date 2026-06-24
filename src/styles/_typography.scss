@@ -1,0 +1,21 @@
+// Configuración de fuentes y estilos tipográficos
+html {
+  font-size: var(--fs-base);
+}
+
+body {
+  font-family:'Inter', sans-serif !important;
+  font-weight: 500; //!important
+  background-color: white !important;
+}
+
+pre {background-color: whitesmoke;color: red;}
+
+.text-underline-offset{
+  text-underline-offset : 4px;
+}
+
+.text-underline-offset:hover{
+  filter: brightness(85%);
+  color: color-mix(in srgb, currentColor 85%, black);
+}

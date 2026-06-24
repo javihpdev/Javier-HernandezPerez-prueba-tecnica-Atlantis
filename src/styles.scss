@@ -1,0 +1,151 @@
+@use '@angular/material' as mat;
+@include mat.elevation-classes();
+@include mat.app-background();
+
+// Importaciones generales
+@import "styles/variables";
+@import "styles/mixins";
+@import "styles/bootstrap"; // Importación personalizada de Bootstrap
+@import "styles/utilities";
+@import "styles/typography";
+@import "styles/components";
+@import "styles/overrides";
+@import "styles/public-fonts.scss";
+@import "styles/mat-dialog";
+@import 'styles/modals';
+
+//@import 'styles/datepicker';
+// @import 'styles/paginator';
+
+$dark-primary-text: rgba(black, 0.87);
+$dark-secondary-text: rgba(black, 0.54);
+$dark-disabled-text: rgba(black, 0.38);
+$dark-dividers: rgba(black, 0.12);
+$dark-focused: rgba(black, 0.12);
+$light-primary-text: white;
+$light-secondary-text: rgba(white, 0.7);
+$light-disabled-text: rgba(white, 0.5);
+$light-dividers: rgba(white, 0.12);
+$light-focused: rgba(white, 0.12);
+
+
+$custom-palette: (
+  50: #008900,
+  100: #97D700,
+  200: #9fa8da,
+  300: #7986cb,
+  400: #5c6bc0,
+  500: #841440,
+  600: #3949ab,
+  700: #303f9f,
+  800: #283593,
+  900: #1a237e,
+  A100: #8c9eff,
+  A200: #536dfe,
+  A400: #3d5afe,
+  A700: #304ffe,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$custom-primary: mat.m2-define-palette($custom-palette, 50);
+$custom-normal: mat.m2-define-palette(mat.$m2-pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$custom-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$custom-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $custom-primary,
+    accent: $custom-normal,
+    warn: $custom-warn,
+  ),
+  typography: mat.m2-define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($custom-theme);
+
+/* You can add global styles to this file, and also import other style files */
+$primary: #10069F;
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+@import 'bootstrap/scss/bootstrap';
+html, body { height: 100%; }
+body { margin: 0; font-family: Inter, sans-serif; }
+.navbar{
+  --bs-navbar-padding-x: 1rem;
+}
+
+.cursor-pointer{ cursor: pointer;}
+
+.w-100{
+  .mat-mdc-form-field{
+    width: 100%;
+  }
+}
+
+.snackbar-error {
+  .mdc-snackbar__surface {
+    background-color: var(--bs-danger) !important;
+  }
+  .snackbar-message{
+    color: var(--bs-white);
+  }
+  .btn-link{
+    color: var(--bs-white);
+  }
+}
+
+.snackbar-success {
+  .mdc-snackbar__surface {
+    background-color: var(--bs-success) !important;
+  }
+  .snackbar-message{
+    color: var(--bs-white);
+  }
+  .btn-link{
+    color: var(--bs-white);
+  }
+}
+
+.btn {
+  background-color: $primary;
+  color: var(--bs-white);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}

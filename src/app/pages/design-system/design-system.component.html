@@ -1,0 +1,345 @@
+<div class="container">
+    <h2 class="mb-8">Sistema de diseño</h2>
+    <h3 class="bg-neutral-normal p-3">Tipografía</h3>
+    <h4>Títulos</h4>
+    <hr>
+    <h1 class="row align-items-center  mt-8">
+        <span class="col-1 font-small  fw-bolder">Heading</span>
+        <span class=" col-11 font-heading">Encabezado principal de sección</span>
+    </h1>
+    <h1 class="row align-items-center">
+        <span class="col-1 font-small  fw-bolder">H1</span>
+        <span class="col-5 font-title-1">Título de página</span>
+        <span class="col-6 font-title-1 fw-bolder">Título de página</span>
+    </h1>
+    <h2 class="row align-items-center">
+        <span class="col-1 font-caption  fw-bolder">H2</span>
+        <span class="col-5 font-title-2">Título de subsección</span>
+        <span class="col-6 font-title-2 fw-bolder">Título de subsección</span>
+    </h2>
+    <h3 class="row align-items-center">
+        <span class="col-1 font-caption  fw-bolder">H3</span>
+        <span class="col-5 font-title-3">Encabezado de bloque de contenido</span>
+        <span class="col-6 font-title-3 fw-bolder">Encabezado de bloque de contenido</span>
+    </h3>
+    <h4 class="row align-items-center">
+        <span class="col-1 font-caption  fw-bolder">H4</span>
+        <span class="col-5 font-title-4">Título de componente</span>
+        <span class="col-6 font-title-4 fw-bolder">Título de componente</span>
+    </h4>
+    <h4 class="mt-8">Párrafos</h4>
+    <hr>
+    <div class="d-grid align-items-start gap-4 p-3 mb-6" style="grid-template-columns: .3fr 1fr 1fr 1fr 1fr;">
+        <p class="font-caption  fw-bolder">Body</p>
+        <p class="font-body fw-bolder">Párrafos y descripciones</p>
+        <p class="font-body fw-bold">Párrafos y descripciones</p>
+        <p class="font-body fw-semibold">Párrafos y descripciones</p>
+        <p class="font-body fw-semibold text-decoration-underline">Párrafos y descripciones</p>
+    </div>
+    <div class="d-grid align-items-start gap-4 p-3 mb-6" style="grid-template-columns: .3fr 1fr 1fr 1fr 1fr;">
+        <p class="font-caption  fw-bolder">Small</p>
+        <p class="font-small fw-bolder">Texto secundario o descriptivo</p>
+        <p class="font-small fw-bold">Texto secundario o descriptivo</p>
+        <p class="font-small fw-semibold">Texto secundario o descriptivo</p>
+        <p class="font-small fw-semibold text-decoration-underline">Texto secundario o descriptivo</p>
+    </div>
+    <h4 class="mt-10">Captions</h4>
+    <hr>
+    <div class="d-grid align-items-start gap-4 p-3 mb-6" style="grid-template-columns: .3fr 1fr 1fr 1fr 1fr;">
+        <p class="font-caption  fw-bolder">Caption</p>
+        <p class="font-caption fw-bolder">Leyenda o metadata</p>
+        <p class="font-caption fw-bold">Leyenda o metadata</p>
+        <p class="font-caption fw-semibold">Leyenda o metadata</p>
+        <p class="font-caption fw-semibold text-decoration-underline">Leyenda o metadata</p>
+    </div>
+    <h3 class="bg-neutral-normal p-3 my-5">Controles</h3>
+    <h4>Text Input</h4>
+    <hr>
+    <form formGroup="form">
+        <div class="d-grid align-items-start gap-4 p-3 mb-6" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+            <div class="" app-input [form]="form" [type]="'password'" [control]="'inputPwd'" 
+                [label]="'Prefijo'" [description]="'Description label'" 
+                [icons]="{left:'', right:'check_circle'}" [placeholder]="''" 
+                [link]="{text:'Mostrar', altText:'Ocultar', control:'password'}"
+            ></div>
+            <div class="" app-input [form]="form" [type]="'text'" [control]="'inputDis'" [label]="'Prefijo'" [description]="'Description label'" [icons]="{left:'', right:'check_circle'}" placeholder="" ></div>
+            <div>
+                <div class="" app-input [form]="form" [type]="'text'" [control]="'inputReq'" [label]="'Prefijo'" [description]="'Description label'" [icons]="{left:'', right:'check_circle'}" placeholder="" ></div>
+                <div class="font-caption d-flex align-items-start text-error-normal gap-1 mt-2">
+                    <span class="material-symbols-outlined font-caption text-error-normal">cancel</span>
+                    <span>Campo inválido</span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <h4>Checkboxes</h4>
+    <hr>
+    <form formGroup="form">
+        <div class="d-grid align-items-start gap-4 p-3 mb-6" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+            <div class="" app-checkbox [form]="form" [control]="'checkBox1'" [label]="'Label'" [description]="'Description in column'" [descriptionColumn]="true"></div>
+            <div class="" app-checkbox [form]="form" [control]="'checkBox2'" [label]="'Label'" [description]="'Description in line'" [descriptionInline]="true"></div>
+            <div class="" app-checkbox [form]="form" [control]="'checkBox3'" [label]="'Label sin descripción'"></div>
+            <div class="" app-checkbox [form]="form" [control]="'checkBox4'" [label]="'Label sin Border'" [border]="false"></div>
+        </div>
+    </form>
+    <h4>Botones</h4>
+    <h5>Normal</h5>
+    <hr>
+    <div>
+        <div class="d-grid align-items-start gap-4 p-3 mb-6" style="grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;">
+            <span class=""></span>
+            <span>Default</span>
+            <span>Disabled</span>
+            <span>Informative</span>
+            <span>Error</span>
+            <span>Warning</span>
+        </div>
+        <div class="d-grid align-items-start gap-4 p-3 mb-6" style="grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;">
+            <span class="h5">Primary</span>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 1'" [size]="'normal'" [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}"></div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 2'" [size]="'normal'" [disabled]="true" [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}"></div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 3'" 
+                [buttonStyle]="'info'"
+                [size]="'normal'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 4'" 
+                [buttonStyle]="'error'"
+                [size]="'normal'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 5'" 
+                [buttonStyle]="'warning'"
+                [size]="'normal'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            
+            <span class="h5">Secondary</span>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 1'" [colorStyle]="'secondary'" [size]="'normal'" [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}"></div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 2'" [disabled]="true" [colorStyle]="'secondary'" [size]="'normal'" [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}"></div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 3'" 
+                [buttonStyle]="'info'"
+                [colorStyle]="'secondary'"
+                [size]="'normal'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 4'" 
+                [buttonStyle]="'error'"
+                [colorStyle]="'secondary'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 5'" 
+                [buttonStyle]="'warning'"
+                [colorStyle]="'secondary'"
+                [size]="'normal'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            
+            <span class="h5">Tertiary</span>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 1'" [colorStyle]="'tertiary'" [size]="'normal'" [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}"></div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 2'" [disabled]="true" [colorStyle]="'tertiary'" [size]="'normal'" [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}"></div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 3'" 
+                [buttonStyle]="'info'"
+                [colorStyle]="'tertiary'"
+                [size]="'normal'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 4'" 
+                [buttonStyle]="'error'"
+                [colorStyle]="'tertiary'"
+                [size]="'normal'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 5'" 
+                [buttonStyle]="'warning'"
+                [colorStyle]="'tertiary'"
+                [size]="'normal'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+        </div>
+        <h5>Small</h5>
+        <hr>
+        <div class="d-grid align-items-start gap-4 p-3 mb-6" style="grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;">
+            <span class=""></span>
+            <span>Default</span>
+            <span>Disabled</span>
+            <span>Informative</span>
+            <span>Error</span>
+            <span>Warning</span>
+        </div>
+
+        <div class="d-grid align-items-start gap-4 p-3 mb-6" style="grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;">
+            <span class="h5">Primary</span>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 1'" [size]="'small'" [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}"></div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 2'" [size]="'small'" [disabled]="true" [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}"></div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 3'" 
+                [buttonStyle]="'info'"
+                [size]="'small'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 4'" 
+                [buttonStyle]="'error'"
+                [size]="'small'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 5'" 
+                [buttonStyle]="'warning'"
+                [size]="'small'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            
+            <span class="h5">Secondary</span>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 1'" [colorStyle]="'secondary'" [size]="'small'" [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}"></div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 2'" [disabled]="true" [colorStyle]="'secondary'" [size]="'small'" [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}"></div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 3'" 
+                [buttonStyle]="'info'"
+                [colorStyle]="'secondary'"
+                [size]="'small'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 4'" 
+                [buttonStyle]="'error'"
+                [colorStyle]="'secondary'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 5'" 
+                [buttonStyle]="'warning'"
+                [colorStyle]="'secondary'"
+                [size]="'small'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            
+            <span class="h5">Tertiary</span>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 1'" [colorStyle]="'tertiary'" [size]="'small'" [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}"></div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 2'" [disabled]="true" [colorStyle]="'tertiary'" [size]="'small'" [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}"></div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 3'" 
+                [buttonStyle]="'info'"
+                [colorStyle]="'tertiary'"
+                [size]="'small'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 4'" 
+                [buttonStyle]="'error'"
+                [colorStyle]="'tertiary'"
+                [size]="'small'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+            <div class="" app-button (linkEmitter)="buttonClick()" [type]="'button'" [text]="'Button 5'" 
+                [buttonStyle]="'warning'"
+                [colorStyle]="'tertiary'"
+                [size]="'small'"
+                [icons]="{left: 'close', leftStyle:'filled', right: 'close', rightStyle:'filled'}">
+            </div>
+        </div>
+    </div>
+    <h3 class="bg-neutral-normal p-3">Colores</h3>
+    <hr>
+    <div class="d-grid align-items-start gap-4 p-3" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="h3 fx-bolder">Corporate</div>
+        <div class="color-pill bg-corporate-light"></div>
+        <div class="color-pill bg-corporate-light-active"></div>
+        <div class="color-pill bg-corporate-normal"></div>
+        <div class="color-pill bg-corporate-normal"></div>
+        <div class="color-pill bg-corporate-hover"></div>
+        <div class="color-pill bg-corporate-active"></div>
+    </div>
+    <div class="d-grid align-items-start gap-4 p-3" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="h3 fx-bolder"></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Light</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Light Active</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Accent</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Normal</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Hover</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Active</span></div>
+    </div>
+    <div class="d-grid align-items-start gap-4 p-3" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="h3 fx-bolder">Neutral</div>
+        <div class="color-pill bg-neutral-light"></div>
+        <div class="color-pill bg-neutral-light-active"></div>
+        <div class="color-pill bg-neutral-normal"></div>
+        <div class="color-pill bg-neutral-normal"></div>
+        <div class="color-pill bg-neutral-hover"></div>
+        <div class="color-pill bg-neutral-active"></div>
+    </div>
+    <div class="d-grid align-items-start gap-4 p-3" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="h3 fx-bolder"></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Light</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Light Active</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Accent</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Normal</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Hover</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Active</span></div>
+    </div>
+    <div class="d-grid align-items-start gap-4 p-3" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="h3 fx-bolder">Informative</div>
+        <div class="color-pill bg-informative-light"></div>
+        <div></div>
+        <div></div>
+        <div class="color-pill bg-informative-normal"></div>
+        <div class="color-pill bg-informative-hover"></div>
+        <div class="color-pill bg-informative-active"></div>
+    </div>
+    <div class="d-grid align-items-start gap-4 p-3" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="h3 fx-bolder"></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Light</span></div>
+        <div></div>
+        <div></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Normal</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Hover</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Active</span></div>
+    </div>
+        <div class="d-grid align-items-start gap-4 p-3" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="h3 fx-bolder">Success</div>
+        <div class="color-pill bg-success-light"></div>
+        <div></div>
+        <div></div>
+        <div class="color-pill bg-success-normal"></div>
+        <div class="color-pill bg-success-hover"></div>
+        <div class="color-pill bg-success-active"></div>
+    </div>
+    <div class="d-grid align-items-start gap-4 p-3" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="h3 fx-bolder"></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Light</span></div>
+        <div></div>
+        <div></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Normal</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Hover</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Active</span></div>
+    </div>
+    <div class="d-grid align-items-start gap-4 p-3" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="h3 fx-bolder">Warning</div>
+        <div class="color-pill bg-warning-light"></div>
+        <div></div>
+        <div></div>
+        <div class="color-pill bg-warning-normal"></div>
+        <div class="color-pill bg-warning-hover"></div>
+        <div class="color-pill bg-warning-active"></div>
+    </div>
+    <div class="d-grid align-items-start gap-4 p-3" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="h3 fx-bolder"></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Light</span></div>
+        <div></div>
+        <div></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Normal</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Hover</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Active</span></div>
+    </div>
+    <div class="d-grid align-items-start gap-4 p-3" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="h3 fx-bolder">Error</div>
+        <div class="color-pill bg-error-light"></div>
+        <div></div>
+        <div></div>
+        <div class="color-pill bg-error-normal"></div>
+        <div class="color-pill bg-error-hover"></div>
+        <div class="color-pill bg-error-active"></div>
+    </div>
+    <div class="d-grid align-items-start gap-4 p-3" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+        <div class="h3 fx-bolder"></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Light</span></div>
+        <div></div>
+        <div></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Normal</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Hover</span></div>
+        <div class="d-flex justify-content-between"><span class="fw-bold">Active</span></div>
+    </div>
+</div>

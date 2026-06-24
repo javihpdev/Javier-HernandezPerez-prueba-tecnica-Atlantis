@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{ 'Eliminar registro' | translate }}</h2>
+<mat-dialog-content>
+  {{'¿Esta seguro que quiere eliminar el registro?' | translate}}
+</mat-dialog-content>
+<mat-dialog-actions class="d-flex justify-content-end">
+  <button class="btn btn-secondary me-2" mat-dialog-close cdkFocusInitial>No</button>
+  <button class="btn btn-primary" (click)="clickEvent()">Ok</button>
+</mat-dialog-actions>

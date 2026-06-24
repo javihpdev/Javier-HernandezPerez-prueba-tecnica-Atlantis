@@ -1,0 +1,22 @@
+<h1 class="text-corporate-normal">{{'Maestro de aeropuertos' | translate}}</h1>
+
+<div class="d-flex justify-content-end">
+<!--
+  <a role="button" class="btn btn-primary" [routerLink]="['/masters/airports/new' | localize]">{{'Nuevo' | translate}}</a>
+-->
+  <button class="btn btn-primary" (click)="openDialog()">{{'Nuevo' | translate}}</button>
+</div>
+
+<app-expansion-panel #expansionPanelComponent>
+  <ng-container body>
+    <app-airports-form [action]="ActionEnum.FILTER" (emitSubmit)="filterEventClick($event)"></app-airports-form>
+  </ng-container>
+</app-expansion-panel>
+
+<app-table [data]="data"
+           [actions]="[ActionEnum.EDIT, ActionEnum.REMOVE]"
+           [loading]="loading"
+           [paginator]="paginator"
+           [columns]="columns"
+           (actionEventClick)="actionEventClick($event)"
+           (changeData)="changeTableEvent($event)"></app-table>

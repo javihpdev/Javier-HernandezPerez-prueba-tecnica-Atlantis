@@ -1,0 +1,13 @@
+<mat-form-field appearance="outline" [ngClass]="formFieldClassList">
+  <mat-label>{{label | translate}}</mat-label>
+  <input class="form-input" [type]="type" matInput placeholder=" " [formControl]="formControl">
+  @if (form.get(control)?.hasError('required')){
+    <mat-error class="invalid-feedback d-block">{{'Valor requerido' | translate}} </mat-error>
+  }
+  @if (form.get(control)?.hasError('minlength')){
+    {{'Min:' | translate}} {{form.get(control)?.errors?.['minlength'].requiredLength}} {{'caracteres'}}
+  }
+  @if (form.get(control)?.hasError('maxlength')){
+    {{'Máx:' | translate}} {{form.get(control)?.errors?.['maxlength'].requiredLength}} {{'caracteres'}}
+  }
+</mat-form-field>

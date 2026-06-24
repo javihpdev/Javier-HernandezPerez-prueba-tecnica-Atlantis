@@ -1,0 +1,20 @@
+<h1 class="text-corporate-normal">{{'Maestro de aerolíneas ZED' | translate}}</h1>
+
+<div class="d-flex justify-content-end">
+  <button class="btn btn-primary" (click)="openDialog()">{{'Nuevo' | translate}}</button>
+</div>
+
+<app-expansion-panel #expansionPanelComponent>
+  <ng-container body>
+    <app-zed-airlines-form [action]="ActionEnum.FILTER" (emitSubmit)="filterEventClick($event)"></app-zed-airlines-form>
+  </ng-container>
+</app-expansion-panel>
+
+<app-table [data]="data"
+           [actions]="[ActionEnum.EDIT, ActionEnum.REMOVE]"
+           [loading]="loading"
+           [paginator]="paginator"
+           [columns]="columns"
+           (actionEventClick)="actionEventClick($event)"
+           (changeData)="changeTableEvent($event)"></app-table>
+

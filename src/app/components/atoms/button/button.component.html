@@ -1,0 +1,67 @@
+@if(route) {
+    <div class="d-flex align-items-{{textAlign}} justify-content-{{textAlign}}" [class.col-12]="fullSize">
+        @if(targetBlank) {
+            <a target = '_blank' class="d-flex justify-content-center align-items-center font-headline {{btnStyle}} {{bgColor}} {{style}}"
+                [class.disabled] = "disabled"
+                [class.normal] = "size!='small'"
+                [class.small] = "size=='small'"
+                [ngClass]="classList"
+                type="{{type}}"
+                [routerLink]="[route | localize]"
+                [queryParams]="queryParams"
+                >
+
+                @if(icons?.left) {<span class="material-symbols-outlined me-3 {{iconColor}}">{{icons?.left}}</span>}
+                @if(text){<span class="{{classText}}">{{text|translate}}</span>}
+                @if(icons?.right) {<span class="material-symbols-outlined ms-3 {{iconColor}}">{{icons?.right}}</span>}
+            </a>
+        }@else {
+            <a class="d-flex justify-content-center align-items-center font-headline {{btnStyle}} {{bgColor}} {{style}}"
+                [class.disabled] = "disabled"
+                [class.normal] = "size!='small'"
+                [class.small] = "size=='small'"
+                [ngClass]="classList"
+                type="{{type}}"
+                [routerLink]="[route | localize]"
+                [queryParams]="queryParams"
+                >
+
+                @if(icons?.left) {<span class="material-symbols-outlined me-3 {{iconColor}}">{{icons?.left}}</span>}
+                @if(text){<span class="{{classText}}">{{text|translate}}</span>}
+                @if(icons?.right) {<span class="material-symbols-outlined ms-3 {{iconColor}}">{{icons?.right}}</span>}
+            </a>
+        }
+    </div>
+} @else if (href) {
+  <div class="d-flex align-items-{{textAlign}} justify-content-{{textAlign}}">
+    <a class="d-flex justify-content-center align-items-center font-headline {{btnStyle}} {{bgColor}} {{style}}"
+       [class.disabled] = "disabled && !customDisabled"
+       [class.normal] = "size!='small'"
+       [class.small] = "size=='small'"
+       [ngClass]="classList"
+       [href]="href"
+       [target]="targetCustom"
+    >
+      @if(icons?.left) {<span class="material-symbols-outlined me-3 {{iconColor}}">{{icons?.left}}</span>}
+      @if(text){<span class="{{classText}}">{{text|translate}}</span>}
+      @if(icons?.right) {<span class="material-symbols-outlined ms-3 {{iconColor}}">{{icons?.right}}</span>}
+    </a>
+  </div>
+} @else{
+    <button class="focus-visible-{{overDark ? 'dark' : 'light'}} d-flex justify-content-center align-items-center font-base {{styleClass}}"
+        [disabled]="disabled"
+        [class.disabled] = "disabled && !customDisabled"
+        [class.normal] = "size!='small'"
+        [class.small] = "size=='small'"
+        [ngClass]="classList"
+        type="{{type}}"
+        (click)="buttonClick()">
+        @if ((animatedIcon && animated) || loading) {
+            <span class="material-symbols-outlined spin-icon">{{animatedIcon}}</span>
+        } @else {
+            @if(icons?.left) {<span class="{{iconColor}} material-symbols-{{icons?.leftStyle||'outlined'}}" [class.me-3]="text">{{icons?.left}}</span>}
+            @if(text){<span class="{{classText}}" [class.text-ellipsis]="ellipsis" >{{text|translate}}</span>}
+            @if(icons?.right) {<span class="{{iconColor}} material-symbols-{{icons?.rightStyle||'outlined'}} ms-3">{{icons?.right}}</span>}
+        }
+    </button>
+}
