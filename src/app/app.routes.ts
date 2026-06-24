@@ -20,6 +20,20 @@ export const routes: Routes = [
         },
         loadComponent: () => import('./pages/design-system/design-system.component').then(c => c.DesignSystemComponent)
       },
+      {
+        path: 'register',
+        data: {
+          breadcrumb: Breadcrumb.create([{label: 'Inicio', route: ROUTES.HOME},{label: 'Register', route: ROUTES.REGISTER}]),
+        },
+        loadComponent: () => import('./pages/register/register.component').then(c => c.RegisterComponent)
+      },
+      {
+        path: 'register-success',
+        data: {
+          breadcrumb: Breadcrumb.create([{label: 'Inicio', route: ROUTES.HOME},{label: 'Register Success', route: ROUTES.REGISTER_SUCCESS}]),
+        },
+        loadComponent: () => import('./pages/register-success/register-success.component').then(c => c.RegisterSuccessComponent)
+      },
     ]
   },
 
