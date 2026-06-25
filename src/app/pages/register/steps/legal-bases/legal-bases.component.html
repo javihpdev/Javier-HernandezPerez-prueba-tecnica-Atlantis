@@ -1,0 +1,61 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+<p class="font-caption text-neutral-hover">Paso {{ step() }} de {{ totalSteps() }}</p>
+  <div class="d-flex flex-column gap-4">
+    <h1 class="font-title-1 fw-bold">Bases legales</h1>
+    <p class="font-body text-neutral-hover">
+      Acepta los términos legales de la plataforma para completar el registro.
+    </p>
+  </div>
+
+  <div class="d-flex flex-column">
+    <div
+      app-checkbox
+      [form]="form"
+      control="legalBases"
+      [required]="true"
+      [errorMsg]="legalBasesError()"
+      description="Description"
+      [descriptionColumn]="true"
+    >
+      <span label>Acepto las <span class="text-decoration-underline text-corporate-accent">bases legales.</span></span>
+    </div>
+
+    <div
+      app-checkbox
+      [form]="form"
+      control="privacyPolicy"
+      [required]="true"
+      [errorMsg]="privacyPolicyError()"
+      description="Description"
+      [descriptionColumn]="true"
+    >
+      <span label>Acepto la <span class="text-decoration-underline text-corporate-accent">política de privacidad.</span></span>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column gap-3 actions">
+    <div
+      class="w-100"
+      app-button
+      [type]="'submit'"
+      [text]="'Completar registro'"
+      [size]="'normal'"
+      [classList]="'w-100'"
+    >
+  </div>
+
+    <div
+      class="w-100"
+      app-button
+      [type]="'button'"
+      [text]="'Volver atrás'"
+      [size]="'normal'"
+      [classList]="'w-100'"
+      [colorStyle]="'secondary'"
+      (linkEmitter)="goBack()"
+    ></div>
+  </div>
+</form>
