@@ -1,0 +1,59 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex flex-column">
+
+  <p class="font-caption text-neutral-hover">Paso {{ step() }} de {{ totalSteps() }}</p>
+  <div class="d-flex flex-column gap-4">
+    <h1 class="font-title-1 fw-bold">Datos de contacto</h1>
+    <p class="font-body text-neutral-hover">
+      Introduce tus datos de contacto. Te enviaremos un mensaje para confirmar tu correo electrónico.
+    </p>
+  </div>
+
+  <div app-input
+    [form]="form"
+    control="email"
+    label="Correo electrónico"
+    type="email"
+    inputMode="email"
+    [required]="true">
+  </div>
+
+  <div class="d-flex gap-3">
+    <div class="prefix-input" app-input
+      [form]="form"
+      control="prefix"
+      label="Prefijo"
+      type="text"
+      inputMode="numeric"
+      prefix="+"
+      [required]="true">
+    </div>
+
+    <div class="flex-grow-1" app-input
+      [form]="form"
+      control="phone"
+      label="Teléfono móvil"
+      type="tel"
+      inputMode="numeric"
+      [required]="true">
+    </div>
+  </div>
+
+  <div class="d-flex flex-column gap-3 actions">
+    <div class="w-100" app-button
+      [type]="'submit'"
+      [text]="'Continuar'"
+      [size]="'normal'"
+      [classList]="'w-100'">
+    </div>
+
+    <div class="w-100" app-button
+      [type]="'button'"
+      [text]="'Volver atrás'"
+      [size]="'normal'"
+      [classList]="'w-100'"
+      [colorStyle]="'secondary'"
+      (linkEmitter)="goBack()">
+    </div>
+  </div>
+
+</form>
