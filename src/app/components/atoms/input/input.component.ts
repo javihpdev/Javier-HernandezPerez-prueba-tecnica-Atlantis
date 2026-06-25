@@ -43,6 +43,7 @@ export class InputComponent implements OnInit{
 
   errors: string[] = [
     'required',
+    'validateNameSurname',
     'validateOnlyLetters',
     'validateDNI',
     'validateOtherDoc',
@@ -120,6 +121,8 @@ export class InputComponent implements OnInit{
       if(this.form.get(this.control)?.hasError(error)){
         if(['required', 'noWhiteSpace'].includes(error) && this.form.get(this.control)?.hasError(error)){
           response = 'Este campo no puede estar vacío';
+        }else if(error == 'validateNameSurname' && this.form.get(this.control)?.hasError(error)){
+          response = 'Debe contener al menos dos caracteres';
         }else if(error == 'validateOnlyLetters' && this.form.get(this.control)?.hasError(error)){
           response = 'No puede contener números ni caracteres especiales';
         }else if(error == 'validatePhone' && this.form.get(this.control)?.hasError(error)){

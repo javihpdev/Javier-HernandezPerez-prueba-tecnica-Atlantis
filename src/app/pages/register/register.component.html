@@ -1,15 +1,14 @@
 <div class="register-container">
   <div class="register-card">
-    
     @switch (currentStep()) {
       @case (1) {
-        <app-personal-data (next)="next()" />
+        <app-personal-data [step]="1" [totalSteps]="totalSteps" (next)="next()" (previous)="previous()"/>
       }
       @case (2) {
-        <app-contact-data (next)="next()" (previous)="previous()" />
+        <app-contact-data [step]="2" [totalSteps]="totalSteps" (next)="next()" (previous)="previous()" />
       }
       @case (3) {
-        <app-legal-bases (complete)="complete()" (previous)="previous()" />
+        <app-legal-bases [step]="3" [totalSteps]="totalSteps" (complete)="complete()" (previous)="previous()" />
       }
     }
   </div>

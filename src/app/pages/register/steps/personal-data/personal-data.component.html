@@ -1,0 +1,52 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <!-- Cabecera del paso -->
+  <p class="font-caption text-neutral-hover">Paso {{ step() }} de {{ totalSteps() }}</p>
+  <div class="d-flex flex-column gap-4">
+    <h1 class="font-title-1 fw-bold">Datos personales</h1>
+    <p class="font-body text-neutral-hover">
+      Introduce tus datos de identificación. No te llevará más de un minuto.
+    </p>
+    </div>
+    
+    <!-- Campo Nombre -->
+    <div app-input
+    [form]="form"
+    control="name"
+    label="Nombre"
+    type="text"
+    [required]="true"
+    >
+  </div>
+  
+  <!-- Campo Apellidos -->
+  <div app-input
+  [form]="form"
+    control="surname"
+    label="Apellidos"
+    type="text"
+    [required]="true"
+  >
+  </div>
+
+  <!-- Acciones -->
+  <div class="d-flex flex-column gap-3 actions">
+    <div class="w-100" app-button
+      [type]="'submit'"
+      [text]="'Continuar a contacto'"
+      [size]="'normal'"
+      [classList]="'w-100'">
+    </div>
+
+    <div class="w-100" app-button
+      [type]="'button'"
+      [text]="'Volver atrás'"
+      [size]="'normal'"
+      [classList]="'w-100'"
+      [colorStyle]="'secondary'"
+      [routerLink]="'/'"
+      (click)="goBack()"
+      >
+    </div>
+  </div>
+
+</form>
