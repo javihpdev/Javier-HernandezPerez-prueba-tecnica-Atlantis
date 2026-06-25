@@ -28,10 +28,7 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/register/register.component').then(c => c.RegisterComponent)
       },
       {
-        path: 'register-success',
-        data: {
-          breadcrumb: Breadcrumb.create([{label: 'Inicio', route: ROUTES.HOME},{label: 'Register Success', route: ROUTES.REGISTER_SUCCESS}]),
-        },
+        path: 'register/success',
         loadComponent: () => import('./pages/register-success/register-success.component').then(c => c.RegisterSuccessComponent)
       },
     ]

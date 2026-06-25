@@ -1,0 +1,59 @@
+@if (hasData()) {
+  <div class="success-container">
+    <div class="success-card">
+      <h1 class="font-title-1 fw-bold mb-1">¡Registro completado!</h1>
+      <p class="font-body text-neutral-hover mb-4">
+        Tu cuenta ha sido creada correctamente.
+      </p>
+
+      <div class="data-summary">
+        <h2 class="font-title-3 fw-bold mb-3">Resumen de tus datos</h2>
+
+        <div class="data-row">
+          <span class="font-small text-neutral-hover">Nombre</span>
+          <span class="font-small fw-bold">{{ data.name }}</span>
+        </div>
+        <div class="data-row">
+          <span class="font-small text-neutral-hover">Apellidos</span>
+          <span class="font-small fw-bold">{{ data.surname }}</span>
+        </div>
+        <div class="data-row">
+          <span class="font-small text-neutral-hover">Correo electrónico</span>
+          <span class="font-small fw-bold">{{ data.email }}</span>
+        </div>
+        <div class="data-row">
+          <span class="font-small text-neutral-hover">Prefijo</span>
+          <span class="font-small fw-bold">+{{ data.prefix }}</span>
+        </div>
+        <div class="data-row">
+          <span class="font-small text-neutral-hover">Teléfono móvil</span>
+          <span class="font-small fw-bold">{{ data.phone }}</span>
+        </div>
+        <div class="data-row">
+          <span class="font-small text-neutral-hover">Bases legales</span>
+          <span class="font-small fw-bold text-corporate-normal"
+            >Aceptadas</span
+          >
+        </div>
+        <div class="data-row">
+          <span class="font-small text-neutral-hover"
+            >Política de privacidad</span
+          >
+          <span class="font-small fw-bold text-corporate-normal"
+            >Aceptadas</span
+          >
+        </div>
+      </div>
+
+      <div
+        class="mt-4 w-100"
+        app-button
+        [routerLink]="'/'"
+        [text]="'Ir al inicio'"
+        [size]="'normal'"
+        [classList]="'w-100'"
+        (click)="resetForm()"
+      ></div>
+    </div>
+  </div>
+}
