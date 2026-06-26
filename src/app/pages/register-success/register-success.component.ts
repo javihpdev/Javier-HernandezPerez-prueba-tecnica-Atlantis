@@ -1,14 +1,13 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LocalizeRouterService } from '@gilsdav/ngx-translate-router';
 import { RegisterService } from '../../services/register/register.service';
 import { ButtonComponent } from '../../components/atoms/button/button.component';
 import { ROUTES } from '../../../config/config';
-import { ɵɵRouterLink } from "@angular/router/testing";
 
 @Component({
   selector: 'app-register-success',
-  imports: [ButtonComponent, ɵɵRouterLink],
+  imports: [ButtonComponent, RouterLink],
   templateUrl: './register-success.component.html',
   styleUrl: './register-success.component.scss'
 })
