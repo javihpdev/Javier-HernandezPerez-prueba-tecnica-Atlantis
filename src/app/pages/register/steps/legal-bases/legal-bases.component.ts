@@ -1,8 +1,8 @@
-import { Component, computed, inject, input, output, signal } from '@angular/core';
+import { Component, computed, output, signal } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RegisterService } from '../../../../services/register/register.service';
 import { CheckboxComponent } from '../../../../components/atoms/checkbox/checkbox.component';
 import { ButtonComponent } from '../../../../components/atoms/button/button.component';
+import { StepBaseComponent } from '../step-base.component';
 
 @Component({
   selector: 'app-legal-bases',
@@ -10,18 +10,11 @@ import { ButtonComponent } from '../../../../components/atoms/button/button.comp
   templateUrl: './legal-bases.component.html',
   styleUrl: './legal-bases.component.scss'
 })
-export class LegalBasesComponent {
-  readonly step = input<number>(3);
-  readonly totalSteps = input<number>(3);
-
+export class LegalBasesComponent extends StepBaseComponent {
   readonly complete = output<void>();
-  readonly previous = output<void>();
-
-  private readonly registerService = inject(RegisterService);
-
   private readonly showErrors = signal(false);
 
-  get form() {
+  override get form() {
     return this.registerService.legalBasesForm;
   }
 
@@ -37,15 +30,11 @@ export class LegalBasesComponent {
       : ''
   );
 
-  onSubmit(): void {
+  override onSubmit(): void {
     this.showErrors.set(true);
     this.registerService.triggerValidation(this.form);
     if (this.form.valid) {
       this.complete.emit();
     }
-  }
-
-  goBack(): void {
-    this.previous.emit();
   }
 }
