@@ -82,3 +82,29 @@ La aplicación quedará disponible por defecto en:
 ```text
 http://localhost:4200
 ```
+
+> El proyecto usa `@gilsdav/ngx-translate-router`, por lo que todas las rutas llevan prefijo de idioma. En desarrollo la ruta base es `http://localhost:4200/es`.
+
+
+## 3. Funcionalidad implementada
+
+### Flujo de registro
+
+La aplicación implementa un wizard de registro en 3 pasos accesible desde la home en `/`:
+
+1. **Datos personales** — nombre y apellidos con validación de mínimo 2 caracteres.
+2. **Datos de contacto** — email, prefijo numérico y teléfono de 8–15 dígitos.
+3. **Bases legales** — aceptación obligatoria de términos y política de privacidad.
+
+Al completar el registro se redirige a `/es/register/success` con un resumen de los datos introducidos.
+
+ Si se accede directamente a `/register/success` sin haber completado el formulario, el componente redirige automáticamente a `/register`.
+
+### Para probar el flujo
+
+1. Arrancar la aplicación con `npm start`.
+2. Navegar a `http://localhost:4200/es`.
+3. Pulsar el botón de acceso al registro.
+4. Completar los 3 pasos del formulario.
+5. Verificar que la página de confirmación muestra correctamente todos los datos.
+6. Pulsar "Ir al inicio" y comprobar que el formulario se reinicia (el servicio llama a `reset()`).
