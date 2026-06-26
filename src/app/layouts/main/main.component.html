@@ -1,25 +1,52 @@
 
 <header>
-    <section class="menu bg-corporate-normal text-neutral-light py-4">
-        <div class="container">
-            <div class="d-flex align-items-center justify-content-between">
-                <img class="logo" src="../assets/img/atlantis-logo-white.png" alt="Logo" width="240" />
-                <div class="d-flex align-items-center justify-content-end gap-8">
-                    <div class="menu">
-                        Menú
-                    </div>
-                    <div class="user-logged">
-                        Logged user
-                    </div>
-                </div>
-            </div>
+  <nav class="bg-corporate-normal text-neutral-light py-4">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <a routerLink="/">
+          <img class="logo" src="assets/img/atlantis-logo-white.png" alt="Logo" width="240" />
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="d-none d-md-flex align-items-center gap-4">
+          <a href="#" class="nav-link-header">Ayuda</a>
+          <span class="nav-divider">|</span>
+          <a routerLink="/" class="nav-link-header">
+            <span class="material-symbols-outlined nav-chevron">chevron_left</span>
+            Volver a inicio
+          </a>
         </div>
-    </section>
-    <section class="container my-5"><app-breadcrumb /></section>
+
+        <!-- Mobile hamburger -->
+        <button class="hamburger-btn d-flex d-md-none" aria-label="Abrir menú">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container my-5"><app-breadcrumb /></section>
 </header>
 
-<section class="container">
-    <router-outlet />
+<section class="container main-content">
+  <router-outlet />
 </section>
 
-<footer></footer>
+<footer class="footer bg-neutral-light">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <span class="text-corporate-normal fw-semibold">IASS &copy; 2026</span>
+        <a href="#" class="footer-link">Aviso legal</a>
+        <a href="#" class="footer-link">Política de privacidad</a>
+        <a href="#" class="footer-link">Política de cookies</a>
+        <a href="#" class="footer-link">Accesibilidad</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="footer-social-link" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>

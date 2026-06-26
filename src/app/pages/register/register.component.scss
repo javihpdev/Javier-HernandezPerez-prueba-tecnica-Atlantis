@@ -1,4 +1,11 @@
+:host {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .register-container {
+  flex: 1;
   display: flex;
   justify-content: center;
   padding: 2rem 1rem;
@@ -7,6 +14,7 @@
   .register-card {
     display: flex;
     width: 446px;
+    height: fit-content;
     background: white;
     border-radius: 8px;
     padding: 24px;
@@ -15,7 +23,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .register-container {
     padding: 1rem 0.5rem;
 
